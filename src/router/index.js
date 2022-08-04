@@ -5,7 +5,6 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: '/quick-start/test', 
     component: () => import("@/app/App.vue"),
     children: [
       {
@@ -13,6 +12,7 @@ const routes = [
         component: () => import("@/modules/dev-module/layouts/full/full-layout.vue"),
         children: [
           {
+    redirect: 'quick-start/test', 
             path: "",
             alias: 'dashboard',
             component: () => import("@/modules/dev-module/pages/dashboard/dashboard-page.vue"),
