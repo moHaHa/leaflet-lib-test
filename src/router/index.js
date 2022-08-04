@@ -13,10 +13,21 @@ const routes = [
         children: [
           {
             path: "",
-            alias: '/dashboard',
+            alias: 'dashboard',
             component: () => import("@/modules/dev-module/pages/dashboard/dashboard-page.vue"),
             children: [
-              
+            ],
+          },    
+        ],
+      },
+      {
+        path: "quick-start",
+        component: () => import("@/modules/quick-start/layout/index-layout.vue"),
+        children: [
+          {
+            path: "test",
+            component: () => import("@/modules/quick-start/pages/test"),
+            children: [
             ],
           },    
         ],
