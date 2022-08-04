@@ -13,8 +13,8 @@
         ></v-avatar>
 
         <v-btn
-          v-for="link in links"
-          :key="link"
+          v-for="link , index in links"
+          :key="index"
           text
           :to="link.link"
         >
