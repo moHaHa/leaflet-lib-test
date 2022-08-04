@@ -5,6 +5,7 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    redirect: '/quick-start/test', 
     component: () => import("@/app/App.vue"),
     children: [
       {
