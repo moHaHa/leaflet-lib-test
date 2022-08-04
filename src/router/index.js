@@ -27,7 +27,7 @@ const routes = [
         children: [
           {
             path: "test",
-            component: () => import("@/modules/quick-start/pages/test"),
+            component: () => import("@/modules/quick-start/pages/test/test-page"),
             children: [
             ],
           },    
