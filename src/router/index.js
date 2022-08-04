@@ -12,7 +12,7 @@ const routes = [
         component: () => import("@/modules/dev-module/layouts/full/full-layout.vue"),
         children: [
           {
-    redirect: 'quick-start/test', 
+            redirect: 'quick-start/test', 
             path: "",
             alias: 'dashboard',
             component: () => import("@/modules/dev-module/pages/dashboard/dashboard-page.vue"),
