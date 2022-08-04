@@ -31,6 +31,12 @@ const routes = [
             children: [
             ],
           },    
+          {
+            path: "other",
+            component: () => import("@/modules/quick-start/pages/other/other-page"),
+            children: [
+            ],
+          },    
         ],
       },
     ],
