@@ -9,12 +9,11 @@ const routes = [
     children: [
       {
         path: "",
+        alias: 'dev',
         component: () => import("@/modules/dev-module/layouts/full/full-layout.vue"),
         children: [
           {
-            redirect: 'quick-start/test', 
             path: "",
-            alias: 'dashboard',
             component: () => import("@/modules/dev-module/pages/dashboard/dashboard-page.vue"),
             children: [
             ],
@@ -34,6 +33,24 @@ const routes = [
           {
             path: "other",
             component: () => import("@/modules/quick-start/pages/other/other-page"),
+            children: [
+            ],
+          },    
+        ],
+      },
+      {
+        path: "jeojson",
+        component: () => import("@/modules/jeojson/layout/index-layout.vue"),
+        children: [
+          {
+            path: "preview",
+            component: () => import("@/modules/jeojson/pages/preview/preview-page"),
+            children: [
+            ],
+          },    
+          {
+            path: "other",
+            component: () => import("@/modules/jeojson/pages/other/other-page"),
             children: [
             ],
           },    
