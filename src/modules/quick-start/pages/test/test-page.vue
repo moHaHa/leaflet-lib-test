@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     makeMap() {
-      this.map = L.map("map").setView([33.5244122,36.2872257] , 19);
+      this.map = L.map("map").setView([51.505, -0.09] , 13);
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 22,
         attribution: "© OpenStreetMap",
