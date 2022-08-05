@@ -1,7 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app shrink-on-scroll>
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-app-bar app >
 
       <v-toolbar-title>App Development env</v-toolbar-title>
 
