@@ -50,13 +50,18 @@
 </template>
 
 <script>
+import store from './store.js'
   export default {
     data: () => ({
     
       links:[
         {text: 'preview', link: '/jeojson/preview'},
+        {text: 'edit jeoJSON ', link: '/jeojson/edit-jeojson'},
       ]
     }),
+    created() {
+      this.$store.registerModule('jeosone' , store)
+    }
   }
 </script>
 <style lang="scss">
