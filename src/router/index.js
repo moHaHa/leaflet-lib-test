@@ -49,6 +49,12 @@ const routes = [
             ],
           },    
           {
+            path: "edit-jeojson",
+            component: () => import("@/modules/jeojson/pages/edit-jeojson/edit-jeojson-page"),
+            children: [
+            ],
+          },    
+          {
             path: "other",
             component: () => import("@/modules/jeojson/pages/other/other-page"),
             children: [
