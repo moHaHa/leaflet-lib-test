@@ -1,16 +1,25 @@
 <template>
   <div class="test-page">
-    <v-sheet min-height="70vh" rounded="lg">
-      <div class="py-3 px-3 h-100">
-        <div id="map" class="grey"></div>
+  
+    <v-sheet rounded="lg">
+      <div class="py-3">
+        <v-row no-gutters>
+          <v-col>
+            <div class="px-3">
+              <div >
+                <div ref="map" id="map" class="grey"></div>
+              </div>
+            </div>
+          </v-col>
+        </v-row>
       </div>
     </v-sheet>
   </div>
 </template>
 
 <script>
-import storeMap from './store-map'
 import L from "leaflet";
+import { mapGetters  } from "vuex";
 export default {
   data() {
     return {
@@ -18,24 +27,35 @@ export default {
       map: undefined,
     };
   },
+  computed: {
+    ...mapGetters("jeosone", ["mapConfig"]),
+  },
   methods: {
-    makeMap() {
-      this.map = L.map("map").setView([33.5244122,36.2872257] , 19);
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 22,
+   
+    makeMap(config) {
+      this.map = L.map("map").setView(
+        [config.mapViewX, config.mapViewY],
+        config.mapViewZoom
+      );
+      L.tileLayer(config.mapTileLayerUrlTemplate, {
+        maxZoom: config.mapTileMaxZoom,
         attribution: "© OpenStreetMap",
       }).addTo(this.map);
-      this.map = L.geoJSON(storeMap).addTo(this.map);
+      this.map = L.geoJSON(config.mapJeojson).addTo(this.map);
+    },
+   
+    updateMap() {
+      this.makeMap(this.mapConfig);
     },
   },
   mounted() {
-    this.makeMap();
+    this.updateMap();
   },
 };
 </script>
 
 <style lang="scss">
-@import '~leaflet/dist/leaflet.css';
+@import "~leaflet/dist/leaflet.css";
 .test-page {
   #map {
     height: 400px;
