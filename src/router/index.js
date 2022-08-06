@@ -55,6 +55,12 @@ const routes = [
             ],
           },    
           {
+            path: "add-marker",
+            component: () => import("@/modules/jeojson/pages/add-marker/add-marker-page"),
+            children: [
+            ],
+          },    
+          {
             path: "other",
             component: () => import("@/modules/jeojson/pages/other/other-page"),
             children: [

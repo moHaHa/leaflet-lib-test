@@ -57,6 +57,7 @@ import store from './store.js'
       links:[
         {text: 'preview', link: '/jeojson/preview'},
         {text: 'edit jeoJSON ', link: '/jeojson/edit-jeojson'},
+        {text: 'add marker ', link: '/jeojson/add-marker'},
       ]
     }),
     created() {

@@ -91,6 +91,23 @@ export default {
         attribution: "© OpenStreetMap",
       }).addTo(this.map);
       this.map = L.geoJSON(config.mapJeojson).addTo(this.map);
+       var LeafIcon = L.Icon.extend({
+        options: {
+          iconSize: [30, 60],
+        },
+      });
+     
+      for (let i = 0; i < config.icons.length; i++) {
+        const element = config.icons[i];
+        const customIcon = new LeafIcon({
+          iconUrl: element.iconUrl,
+        });
+          L.marker([element.x, element.y], {
+          icon: customIcon,
+        })
+          .addTo(this.map)
+          .bindPopup(element.description);
+      }
     },
     updateURL() {
       let url = `${this.url}`;

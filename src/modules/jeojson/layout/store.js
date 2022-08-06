@@ -2,9 +2,9 @@ export default {
   namespaced: true,
   state: {
     mapConfig: {
-      mapViewX: 33.52441,
-      mapViewY: 36.28722,
-      mapViewZoom: 18,
+      mapViewX: 33.52374,
+      mapViewY: 36.28639,
+      mapViewZoom: 19,
       mapTileLayerUrlTemplate:
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       mapTileMaxZoom: 22,
@@ -15,23 +15,63 @@ export default {
             type: "Feature",
             properties: {},
             geometry: {
+              type: "Polygon",
+              coordinates: [
+                [
+                  [36.286335065960884, 33.523676393761605],
+                  [36.28645207732915, 33.523676393761605],
+                  [36.28645207732915, 33.523777295193995],
+                  [36.286335065960884, 33.523777295193995],
+                  [36.286335065960884, 33.523676393761605],
+                ],
+              ],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {},
+            geometry: {
               type: "LineString",
               coordinates: [
-                [36.2875172495842, 33.524695464868515],
-                [36.28622978925705, 33.52421695573997],
-                [36.28643095493317, 33.52392179925638],
-                [36.287645995616906, 33.52454788756917],
+                [36.28645207732915, 33.52377645667841],
+                [36.286335065960884, 33.52367723227816],
+              ],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {},
+            geometry: {
+              type: "LineString",
+              coordinates: [
+                [36.286336071789265, 33.523777015688786],
+                [36.286452412605286, 33.523676673267154],
               ],
             },
           },
         ],
       },
+      icons: [
+        {
+          x: 33.523726984245194,
+          y: 36.286393739283085,
+          iconUrl: "http://imageupload.mhacd.com/uploads/053019mark (1).png",
+          description: "shop name",
+        },
+
+        {
+          x: 33.52374012099576,
+          y: 36.28632500767708,
+          iconUrl: "http://imageupload.mhacd.com/uploads/061746mark (1).png",
+          description: "aaaaaaaaaaaaaaaaaaaaa",
+        },
+      ],
     },
   },
   getters: {
-    mapConfig(state){
-        return state.mapConfig
-    }
+    mapConfig(state) {
+      return state.mapConfig;
+    },
   },
   mutations: {
     setMapViewX(state, payload) {
@@ -45,6 +85,9 @@ export default {
     },
     setMapJeojson(state, payload) {
       state.mapConfig.mapJeojson = payload;
+    },
+    addIcon(state, newIcon) {
+      state.mapConfig.icons.push(newIcon);
     },
   },
 };
