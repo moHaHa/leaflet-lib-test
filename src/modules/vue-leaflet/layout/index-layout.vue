@@ -13,7 +13,8 @@
     data: () => ({
     
       links:[
-     
+        {text: 'Test', link: '/vue-leaflet/test'},
+        {text: 'New', link: ''},
       ]
     }),
   }
