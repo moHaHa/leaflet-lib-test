@@ -90,6 +90,12 @@ const routes = [
             children: [
             ],
           },   
+          {
+            path: "markers",
+            component: () => import("@/modules/vue-leaflet/pages/markers/markers-page"),
+            children: [
+            ],
+          },   
         ]
       }
     ],

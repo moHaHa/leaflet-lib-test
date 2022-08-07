@@ -3,31 +3,42 @@
     <mh-module-nav-bar :links="links" />
 
     <v-main class="grey lighten-3">
-      <router-view></router-view>
+      <div
+        class="vue-leaflet-layout-relative-router-view"
+       
+      >
+        <router-view></router-view>
+      </div>
     </v-main>
   </v-app>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-    
-      links:[
-        {text: 'Test', link: '/vue-leaflet/test'},
-        {text: 'Base', link: '/vue-leaflet/base'},
-        {text: 'Shapes', link: '/vue-leaflet/shapes'},
-        {text: 'New', link: ''},
-      ]
-    }),
-  }
+export default {
+  data: () => ({
+    links: [
+      { text: "Test", link: "/vue-leaflet/test" },
+      { text: "Base", link: "/vue-leaflet/base" },
+      { text: "Shapes", link: "/vue-leaflet/shapes" },
+      { text: "markers", link: "/vue-leaflet/markers" },
+      { text: "New", link: "" },
+    ],
+  }),
+};
 </script>
 <style lang="scss">
+.vue-leaflet-layout {
+  .vue-leaflet-layout-relative-router-view {
+    position: relative;
+    z-index: 1;
+  }
+}
 .scale-enter-active,
 .scale-leave-active {
   transition: all 0.5s ease;
 }
 .scale-enter-from,
-.scale-leave-to {  
+.scale-leave-to {
   opacity: 0;
   transform: scale(0.95);
 }
