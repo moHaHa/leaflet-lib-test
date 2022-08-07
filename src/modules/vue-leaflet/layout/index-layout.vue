@@ -14,6 +14,7 @@
     
       links:[
         {text: 'Test', link: '/vue-leaflet/test'},
+        {text: 'Base', link: '/vue-leaflet/base'},
         {text: 'New', link: ''},
       ]
     }),

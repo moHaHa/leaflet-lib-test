@@ -78,6 +78,12 @@ const routes = [
             children: [
             ],
           },   
+          {
+            path: "base",
+            component: () => import("@/modules/vue-leaflet/pages/base/base-page"),
+            children: [
+            ],
+          },   
         ]
       }
     ],
