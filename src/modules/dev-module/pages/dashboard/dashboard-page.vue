@@ -1,7 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar app >
-
+    <v-app-bar app>
       <v-toolbar-title>App Development env</v-toolbar-title>
 
       <v-spacer></v-spacer>
@@ -20,7 +19,9 @@
                 <v-img cover position="start" class="h-100" :src="link.img">
                 </v-img>
               </router-link>
-              <v-card-title>{{link.title}} </v-card-title>
+              <v-card-title>
+                <v-img max-width="30" :src="link.leafletlib === 'vue' ? libVue : libJs"></v-img> {{ link.title }}
+              </v-card-title>
             </v-card>
           </v-col>
         </v-row>
@@ -30,19 +31,25 @@
 </template>
 
 <script>
+import libVue from "@/assets/docs/libVue.png";
+import libJs from "@/assets/docs/libJs.png";
 export default {
   data() {
     return {
+      libVue,
+      libJs,
       links: [
         {
           link: "quick-start/test",
           img: "https://github.com/HBO30/public/blob/images/images/quick-start-leaflet-test.jpg?raw=true",
           title: "Quick start",
+          leafletlib: "js",
         },
         {
           link: "jeojson/preview",
           img: "https://github.com/HBO30/public/blob/images/images/leaf-let-jeojson-preview.jpg?raw=true",
           title: "Jeo JSON",
+          leafletlib: "js",
         },
       ],
     };
