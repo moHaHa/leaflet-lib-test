@@ -84,6 +84,12 @@ const routes = [
             children: [
             ],
           },   
+          {
+            path: "shapes",
+            component: () => import("@/modules/vue-leaflet/pages/shapes/shapes-page"),
+            children: [
+            ],
+          },   
         ]
       }
     ],
