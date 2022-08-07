@@ -96,6 +96,18 @@ const routes = [
             children: [
             ],
           },   
+          {
+            path: "controls",
+            component: () => import("@/modules/vue-leaflet/pages/controls/controls-page"),
+            children: [
+            ],
+          },   
+          {
+            path: "geojson",
+            component: () => import("@/modules/vue-leaflet/pages/geojson/geojson-page"),
+            children: [
+            ],
+          },   
         ]
       }
     ],

@@ -21,6 +21,8 @@ export default {
       { text: "Base", link: "/vue-leaflet/base" },
       { text: "Shapes", link: "/vue-leaflet/shapes" },
       { text: "markers", link: "/vue-leaflet/markers" },
+      { text: "controls", link: "/vue-leaflet/controls" },
+      { text: "geojson", link: "/vue-leaflet/geojson" },
       { text: "New", link: "" },
     ],
   }),
