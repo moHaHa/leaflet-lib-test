@@ -68,6 +68,12 @@ const routes = [
           },    
         ],
       },
+      {
+        path: "vue-leaflet",
+        component: () => import("@/modules/vue-leaflet/layout/index-layout.vue"),
+        children: [
+        ]
+      }
     ],
   },
 ];

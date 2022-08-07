@@ -51,6 +51,12 @@ export default {
           title: "Jeo JSON",
           leafletlib: "js",
         },
+        {
+          link: "/vue-leaflet/test",
+          img: "",
+          title: "Quick Start With Vue Leaflet",
+          leafletlib: "vue",
+        },
       ],
     };
   },
