@@ -64,6 +64,12 @@ export default {
           title: "Quick Start With Vue Leaflet",
           leafletlib: "vue",
         },
+        {
+          link: "/leaflet-geoman/test",
+          img: "",
+          title: "Quick Start with Leaflet Geoman",
+          leafletlib: "geoman",
+        },
       ],
     };
   },

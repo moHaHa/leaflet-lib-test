@@ -115,6 +115,18 @@ const routes = [
             ],
           },   
         ]
+      },
+      {
+        path: "leaflet-geoman",
+        component: () => import("@/modules/leaflet-geoman/layout/index-layout.vue"),
+        children: [
+          {
+            path: "test",
+            component: () => import("@/modules/leaflet-geoman/pages/test/test-page"),
+            children: [
+            ],
+          },   
+        ]
       }
     ],
   },
