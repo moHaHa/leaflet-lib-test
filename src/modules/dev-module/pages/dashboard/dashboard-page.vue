@@ -13,20 +13,21 @@
     <v-main>
       <v-container>
         <v-row>
-          <v-col cols="4" xl="3" v-for="(link, index) in links" :key="index">
-            <v-card height="180">
-              <router-link :to="link.link">
-                <v-img cover position="start" class="h-100" :src="link.img">
+          <v-col cols="12" sm="6"  lg="4"  xl="3" v-for="(link, index) in links" :key="index">
+            <router-link class="text-decoration-none" :to="link.link">
+              <v-card>
+                <v-img cover position="start" min-height="180" class="h-100" :src="link.img">
                 </v-img>
-              </router-link>
-              <v-card-title>
-                <v-img
-                  max-width="30"
-                  :src="chooseIcon(link.leafletlib)"
-                ></v-img>
-                {{ link.title }}
-              </v-card-title>
-            </v-card>
+                <v-card-title>
+                  <span class="me-2"><v-img
+                  
+                    max-width="30"
+                    :src="chooseIcon(link.leafletlib)"
+                  ></v-img></span>
+                  {{ link.title }}
+                </v-card-title>
+              </v-card>
+            </router-link>
           </v-col>
         </v-row>
       </v-container>
