@@ -23,6 +23,7 @@ export default {
       { text: "markers", link: "/vue-leaflet/markers" },
       { text: "controls", link: "/vue-leaflet/controls" },
       { text: "geojson", link: "/vue-leaflet/geojson" },
+      { text: "Image Overlay", link: "/vue-leaflet/image-overlay" },
       { text: "New", link: "" },
     ],
   }),

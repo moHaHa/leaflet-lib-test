@@ -108,6 +108,12 @@ const routes = [
             children: [
             ],
           },   
+          {
+            path: "image-overlay",
+            component: () => import("@/modules/vue-leaflet/pages/image-overlay/image-overlay-page"),
+            children: [
+            ],
+          },   
         ]
       }
     ],
