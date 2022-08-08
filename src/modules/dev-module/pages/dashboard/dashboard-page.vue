@@ -20,7 +20,11 @@
                 </v-img>
               </router-link>
               <v-card-title>
-                <v-img max-width="30" :src="link.leafletlib === 'vue' ? libVue : libJs"></v-img> {{ link.title }}
+                <v-img
+                  max-width="30"
+                  :src="chooseIcon(link.leafletlib)"
+                ></v-img>
+                {{ link.title }}
               </v-card-title>
             </v-card>
           </v-col>
@@ -33,11 +37,13 @@
 <script>
 import libVue from "@/assets/docs/libVue.png";
 import libJs from "@/assets/docs/libJs.png";
+import libGeoman from "@/assets/docs/libGeoman.svg";
 export default {
   data() {
     return {
       libVue,
       libJs,
+      libGeoman,
       links: [
         {
           link: "quick-start/test",
@@ -59,6 +65,22 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    chooseIcon(lib) {
+      let img;
+      switch (lib) {
+        case "geoman":
+          img = this.libGeoman;
+          break;
+        case "vue":
+          img = this.libVue;
+          break;
+        default:
+          img = this.libJs;
+      }
+      return img;
+    },
   },
   //
 };
