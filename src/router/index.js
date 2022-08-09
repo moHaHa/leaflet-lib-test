@@ -127,6 +127,18 @@ const routes = [
             ],
           },   
         ]
+      },
+      {
+        path: "geoman-non-geographical",
+        component: () => import("@/modules/geoman-non-geographical/layout/index-layout.vue"),
+        children: [
+          {
+            path: "test",
+            component: () => import("@/modules/geoman-non-geographical/pages/test/test-page"),
+            children: [
+            ],
+          },   
+        ]
       }
     ],
   },

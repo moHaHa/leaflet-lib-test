@@ -60,14 +60,20 @@ export default {
         },
         {
           link: "/vue-leaflet/test",
-          img: "",
+          img: "https://github.com/HBO30/public/blob/images/images/vue-leaflet.jpg?raw=true",
           title: "Quick Start With Vue Leaflet",
           leafletlib: "vue",
         },
         {
           link: "/leaflet-geoman/test",
-          img: "",
+          img: "https://github.com/HBO30/public/blob/images/images/geoman-quick-start.jpg?raw=true",
           title: "Quick Start with Leaflet Geoman",
+          leafletlib: "geoman",
+        },
+        {
+          link: "/geoman-non-geographical/test",
+          img: "https://github.com/HBO30/public/blob/images/images/geoman-non-geographical.jpg?raw=true",
+          title: "Geoman & Non-Geographical",
           leafletlib: "geoman",
         },
       ],
