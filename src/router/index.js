@@ -142,6 +142,13 @@ const routes = [
       }
     ],
   },
+  {
+    path: '/full-product',
+    component:()=> import('@/app/App.vue'),
+    children: [
+      
+    ]
+  }
 ];
 
 const router = new VueRouter({
