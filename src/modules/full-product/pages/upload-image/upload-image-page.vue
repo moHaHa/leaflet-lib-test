@@ -1,7 +1,7 @@
 <template>
   <v-app class="upload-image-page">
     <navigation :links="[]" >
-    <v-btn v-if="imageUrl"  text @click="$vuetify.goTo(link.link)">
+    <v-btn v-if="mapImageUrl"  text @click="$vuetify.goTo('/full-product/upload-image')">
         <span class="mr-2">Next</span>
       </v-btn>
     </navigation>
@@ -25,9 +25,9 @@
          
           
         </v-row>
-        <v-row v-if="imageUrl" justify="center">
+        <v-row v-if="mapImageUrl" justify="center">
             <v-col cols="auto">
-                <v-img :src="imageUrl" width="400"></v-img>
+                <v-img :src="mapImageUrl" width="400"></v-img>
             </v-col>
         </v-row>
       </v-container>
@@ -47,13 +47,14 @@
 <script>
 import navigation from "../../components/nav-bar/nav-bar-component";
 import axios from "axios";
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   components: {
     navigation,
   },
   data() {
     return {
-      imageUrl: "",
+      // imageUrl: "",
       loading: false,
       snackbar: false,
       msg:''
@@ -67,7 +68,19 @@ export default {
       accent: "#3A0473",
     };
   },
+  computed:{
+    ...mapGetters('full-product-store', ['mapImageUrl']),
+    imageUrl:{
+      get(){
+        return this.mapImageUrl
+      },
+      set(newVal){
+        this.setMapImageUrl(newVal) 
+      }
+    }
+  },
   methods: {
+    ...mapMutations('full-product-store', ['setMapImageUrl']),
     async createImageData(file) {
       this.msg = "";
       if (!file) {
