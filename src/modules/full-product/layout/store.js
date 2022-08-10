@@ -3,10 +3,8 @@ export default {
   state: {
     model: {
       mapImageUrl: "",
-      bounds: [
-        [0, 0],
-        [1000, 1000],
-      ],
+      mapImageHeight: 500,
+      mapImageWidth: 500,
       geoJSON: {},
       points: [],
     },
@@ -18,6 +16,15 @@ export default {
     mapImageUrl(state) {
       return state.model.mapImageUrl;
     },
+    mapImageHeight(state) {
+      return state.model.mapImageHeight;
+    },
+    mapImageWidth(state) {
+      return state.model.mapImageWidth;
+    },
+    bounds(state) {
+        return [[0,0], [state.model.mapImageHeight , state.model.mapImageWidth ]]
+    },
   },
   mutations: {
     setMapImageUrl(state, payload) {
@@ -28,6 +35,12 @@ export default {
     },
     setPoints(state, payload) {
       state.model.points = payload;
+    },
+    setMapImageHeight(state, payload) {
+      state.model.mapImageHeight = payload;
+    },
+    setMapImageWidth(state, payload) {
+      state.model.mapImageWidth = payload;
     },
   },
 };
