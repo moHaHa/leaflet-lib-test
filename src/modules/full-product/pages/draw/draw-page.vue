@@ -35,7 +35,7 @@
                   <v-btn depressed outlined color="white"
                 
                    @click="getShapes(store.beautifulGeoJSON)"
-                    :disabled="store.beautifulGeoJSON === null"
+                   
               >save</v-btn>
                 </v-badge>
             
@@ -127,7 +127,7 @@ export default {
       // eslint-disable-next-line no-undef, no-unused-vars
       var image = L.imageOverlay(this.mapImageUrl, bounds).addTo(map2);
       // eslint-disable-next-line no-undef, no-unused-vars
-      let geoL = L.geoJSON(this.beautifulGeoJSON).addTo(map2)
+      let geoL = L.geoJSON(this.geoJSON).addTo(map2)
       map2.fitBounds(bounds);
       let fgFun = function () {
         // eslint-disable-next-line no-undef

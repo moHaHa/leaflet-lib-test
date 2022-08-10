@@ -78,8 +78,6 @@ export default {
   computed: {
     ...mapGetters("full-product-store", ["mapImageUrl", 'bounds' , 'mapImageWidth' , 'mapImageHeight' , 'geoJSON']),
    center(){
-    // let y =  ,
-    // x = 
     return [this.mapImageWidth / 2, this.mapImageHeight / 2]
    } 
   },

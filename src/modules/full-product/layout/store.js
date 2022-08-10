@@ -5,7 +5,7 @@ export default {
       mapImageUrl: "",
       mapImageHeight: 500,
       mapImageWidth: 500,
-      geoJSON: {},
+      geoJSON: null,
       points: [],
     },
   },

@@ -82,7 +82,7 @@ export default {
     };
   },
   created() {
-    this.setGeoJSON({});
+    this.setGeoJSON(null);
     this.setPoints([]);
     this.$vuetify.theme.themes.light = {
       primary: "#120543",
