@@ -146,7 +146,17 @@ const routes = [
     path: '/full-product',
     component:()=> import('@/app/App.vue'),
     children: [
-      
+      {
+        path: "",
+        alias:'main-layout',
+        component: () => import("@/modules/full-product/layouts/main/main-layout.vue"),
+        children: [
+          {
+            path:'home',
+            component:()=> import('@/modules/full-product/pages/home/home-page.vue')
+          }
+        ]
+      }
     ]
   }
 ];

@@ -39,12 +39,14 @@
 import libVue from "@/assets/docs/libVue.png";
 import libJs from "@/assets/docs/libJs.png";
 import libGeoman from "@/assets/docs/libGeoman.svg";
+import logo from '@/assets/logo/logo-dark.svg'
 export default {
   data() {
     return {
       libVue,
       libJs,
       libGeoman,
+      logo,
       links: [
         {
           link: "quick-start/test",
@@ -76,6 +78,12 @@ export default {
           title: "Geoman & Non-Geographical",
           leafletlib: "geoman",
         },
+        {
+          link: "/full-product/home",
+          img: "",
+          title: "Full Product",
+          leafletlib: "logo",
+        },
       ],
     };
   },
@@ -88,6 +96,9 @@ export default {
           break;
         case "vue":
           img = this.libVue;
+          break;
+        case "logo":
+          img = this.logo;
           break;
         default:
           img = this.libJs;
