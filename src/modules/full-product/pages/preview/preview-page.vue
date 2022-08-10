@@ -4,7 +4,7 @@
       <v-btn
         v-if="mapImageUrl"
         text
-        @click="$router.push({path:'/full-product/preview'})"
+        @click="$router.push({path:'/full-product/draw'})"
       >
         <span class="mr-2">Draw</span>
       </v-btn>
@@ -41,6 +41,7 @@
                       :bounds="bounds"
                         :url="mapImageUrl"
                       ></l-image-overlay>
+                        <l-geo-json :geojson="geoJSON"></l-geo-json>
                     </l-map>
                   </div>
                 </div>
@@ -57,7 +58,7 @@
 import L from "leaflet";
 import navigation from "../../components/nav-bar/nav-bar-component";
 import "leaflet/dist/leaflet.css";
-import { LMap, LImageOverlay } from "vue2-leaflet";
+import { LMap, LImageOverlay ,LGeoJson  } from "vue2-leaflet";
 import { Icon } from "leaflet";
 import { mapGetters } from "vuex";
 
@@ -71,14 +72,15 @@ export default {
   components: {
     LMap,
     LImageOverlay,
+    LGeoJson ,
     navigation,
   },
   computed: {
-    ...mapGetters("full-product-store", ["mapImageUrl", 'bounds' , 'mapImageWidth' , 'mapImageHeight']),
+    ...mapGetters("full-product-store", ["mapImageUrl", 'bounds' , 'mapImageWidth' , 'mapImageHeight' , 'geoJSON']),
    center(){
-    let y = this.mapImageHeight / 2 ,
-    x= this.mapImageWidth / 2
-    return [x, y]
+    // let y =  ,
+    // x = 
+    return [this.mapImageWidth / 2, this.mapImageHeight / 2]
    } 
   },
   data() {

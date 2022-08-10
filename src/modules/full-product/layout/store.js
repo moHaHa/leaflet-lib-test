@@ -25,6 +25,9 @@ export default {
     bounds(state) {
         return [[0,0], [state.model.mapImageHeight , state.model.mapImageWidth ]]
     },
+    geoJSON(state){
+        return state.model.geoJSON
+    }
   },
   mutations: {
     setMapImageUrl(state, payload) {

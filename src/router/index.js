@@ -186,6 +186,18 @@ const routes = [
               },
               
             ]
+          },
+          {
+            path: "",
+            alias:'full-layout',
+            component: () => import("@/modules/full-product/layouts/full/full-layout.vue"),
+            children: [
+              {
+                path:'draw',
+                component:()=> import('@/modules/full-product/pages/draw/draw-page.vue')
+              },
+              
+            ]
           }
         ]
       }
