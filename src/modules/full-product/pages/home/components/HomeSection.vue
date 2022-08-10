@@ -22,7 +22,7 @@
                 More Info
               </v-btn>
                <div class="video d-flex align-center py-4 ">
-                <router-link :to="'/full-product/home'"  class="playBut">
+                <router-link :to="'/full-product/upload-image'"  class="playBut">
                   <svg
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
