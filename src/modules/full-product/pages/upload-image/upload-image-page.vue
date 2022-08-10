@@ -1,7 +1,7 @@
 <template>
   <v-app class="upload-image-page">
     <navigation :links="[]" >
-    <v-btn v-if="mapImageUrl"  text @click="$vuetify.goTo('/full-product/upload-image')">
+    <v-btn v-if="mapImageUrl"  text @click="$vuetify.goTo('/full-product/preview')">
         <span class="mr-2">Next</span>
       </v-btn>
     </navigation>
