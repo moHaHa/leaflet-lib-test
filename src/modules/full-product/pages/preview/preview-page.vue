@@ -4,25 +4,43 @@
       <v-btn
         v-if="mapImageUrl"
         text
-        @click="$vuetify.goTo('/full-product/preview')"
+        @click="$router.push({path:'/full-product/preview'})"
       >
-        <span class="mr-2">Next</span>
+        <span class="mr-2">Draw</span>
+      </v-btn>
+      <v-btn
+        v-if="mapImageUrl"
+        text
+        @click="$router.push({path:'/full-product/preview'})"
+      >
+        <span class="mr-2">Add Markers</span>
+      </v-btn>
+      <v-btn
+        v-if="mapImageUrl"
+        text
+        @click="$router.push({path:'/full-product/upload-image'})"
+      >
+        <span class="mr-2">Edit Image</span>
       </v-btn>
     </navigation>
     <v-main class="preview-page-MODEL-main">
       <v-container class="my-10">
-        <v-row>
-          <v-col>
+        <v-row justify="center">
+          <v-col cols="9" >
             <div>
-              <v-sheet  min-height="70vh" rounded="lg">
-                <div class=" h-100">
-                  <div class="map-container">
-                    <l-map style="height: 500px" :zoom="zoom" :center="center">
-                      <l-tile-layer
-                        :url="url"
-                        :attribution="attribution"
-                      ></l-tile-layer>
-                      <l-marker :lat-lng="markerLatLng"></l-marker>
+              <v-sheet rounded="lg">
+                <div>
+                  <div class="map-container h-100">
+                    <l-map
+                      style="height: 450px; border-radius: 10px"
+                      :zoom="zoom"
+                      :crs="crs"
+                      :center="center"
+                    >
+                      <l-image-overlay
+                      :bounds="bounds"
+                        :url="mapImageUrl"
+                      ></l-image-overlay>
                     </l-map>
                   </div>
                 </div>
@@ -36,10 +54,12 @@
 </template>
 
 <script>
+import L from "leaflet";
 import navigation from "../../components/nav-bar/nav-bar-component";
-import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 import "leaflet/dist/leaflet.css";
+import { LMap, LImageOverlay } from "vue2-leaflet";
 import { Icon } from "leaflet";
+import { mapGetters } from "vuex";
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
@@ -50,24 +70,24 @@ Icon.Default.mergeOptions({
 export default {
   components: {
     LMap,
-    LTileLayer,
-    LMarker,
-    navigation
+    LImageOverlay,
+    navigation,
   },
-  computed:{
-    
+  computed: {
+    ...mapGetters("full-product-store", ["mapImageUrl", 'bounds' , 'mapImageWidth' , 'mapImageHeight']),
+   center(){
+    let y = this.mapImageHeight / 2 ,
+    x= this.mapImageWidth / 2
+    return [x, y]
+   } 
   },
   data() {
     return {
-      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      attribution:
-        '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      zoom: 15,
-      center: [51.505, -0.159],
-      markerLatLng: [51.504, -0.159],
+      zoom: -1,
+      crs: L.CRS.Simple,
     };
   },
-    created() {
+  created() {
     this.$vuetify.theme.themes.light = {
       primary: "#120543",
       secondary: "#03052C",
@@ -83,7 +103,7 @@ export default {
       130deg,
       var(--v-primary-base) 0%,
       var(--v-secondary-base) 100%
-    )
+    );
   }
 }
 </style>
