@@ -154,7 +154,20 @@ const routes = [
           {
             path:'home',
             component:()=> import('@/modules/full-product/pages/home/home-page.vue')
-          }
+          },
+          
+        ]
+      },
+      {
+        path: "",
+        alias:'full-layout',
+        component: () => import("@/modules/full-product/layouts/full/full-layout.vue"),
+        children: [
+          {
+            path:'upload-image',
+            component:()=> import('@/modules/full-product/pages/upload-image/upload-image-page.vue')
+          },
+          
         ]
       }
     ]
