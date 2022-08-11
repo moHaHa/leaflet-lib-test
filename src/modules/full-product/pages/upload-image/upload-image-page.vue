@@ -12,7 +12,7 @@
     <v-main class="upload-image-page-MODEL-main">
       <v-container class="my-8">
         <v-row>
-          <v-col cols="6" offset="3">
+          <v-col cols="12" md="6" offset-md="3" >
             <v-file-input
               dark
               clearable
@@ -27,7 +27,7 @@
           </v-col>
         </v-row>
         <v-row v-if="mapImageUrl">
-          <v-col cols="6" offset="3">
+          <v-col cols="12" md="6" offset-md="3">
             <v-row>
               <v-col cols="6">
                 <v-text-field

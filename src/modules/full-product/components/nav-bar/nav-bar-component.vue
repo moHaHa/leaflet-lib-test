@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app :color="'transparent'" :flat="true" dark class="px-15 pt-3">
+  <v-app-bar app :color="'transparent'" :flat="true" dark class=" px-1 px-md-15 pt-3">
     <v-toolbar-title>
       <router-link :to="logoLink">
         <logo-component :width="60"></logo-component>
@@ -36,4 +36,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+
+</style>
