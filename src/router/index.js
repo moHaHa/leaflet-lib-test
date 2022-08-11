@@ -201,6 +201,18 @@ const routes = [
               },
               
             ]
+          },
+          {
+            path: "",
+            alias:'full-layout',
+            component: () => import("@/modules/full-product/layouts/full/full-layout.vue"),
+            children: [
+              {
+                path:'add-markers',
+                component:()=> import('@/modules/full-product/pages/add-markers/add-markers-page.vue')
+              },
+              
+            ]
           }
         ]
       }

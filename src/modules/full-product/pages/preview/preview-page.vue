@@ -11,7 +11,7 @@
       <v-btn
         v-if="mapImageUrl"
         text
-        @click="$router.push({path:'/full-product/preview'})"
+        @click="$router.push({path:'/full-product/add-markers'})"
       >
         <span class="mr-2">Add Markers</span>
       </v-btn>
