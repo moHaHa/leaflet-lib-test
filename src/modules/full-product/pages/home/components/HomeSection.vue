@@ -74,7 +74,7 @@
         <v-img src="./../assets/img/borderWaves.svg" />
       </div>
     </v-parallax>
-    <v-container fluid id="features" class="mt-2 ">
+    <v-container fluid id="features" class="white ">
       <v-row align="center" justify="center">
         <v-col cols="10" class="my-12">
           <v-row align="center" justify="space-around">
@@ -138,12 +138,12 @@ export default {
       videoId: "i8IvvHJssWE",
       features: [
         {
-          img: require("./../assets/img/icon3.png"),
+          img: require("./../assets/img/icon1.png"),
           title: "Upload Image",
           text: "The ability to choose an image for the entire complex.",
         },
         {
-          img: require("./../assets/img/icon1.png"),
+          img: require("./../assets/img/icon2.png"),
           title: "Draw & Edit",
           text: "Draw and modify shapes on the image to locate the shops",
         },

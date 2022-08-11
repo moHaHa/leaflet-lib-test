@@ -144,6 +144,7 @@ const routes = [
   },
   {
     path: '/full-product',
+    
     component:()=> import('@/app/App.vue'),
     children: [
       {
@@ -157,7 +158,9 @@ const routes = [
             component: () => import("@/modules/full-product/layouts/main/main-layout.vue"),
             children: [
               {
-                path:'home',
+                
+                path:'',
+                alias:'home',
                 component:()=> import('@/modules/full-product/pages/home/home-page.vue')
               },
               
